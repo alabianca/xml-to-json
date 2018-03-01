@@ -9,9 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "split": "^1.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "jasmine": "^3.0.0"
   }
