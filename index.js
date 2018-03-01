@@ -1,10 +1,13 @@
 const XMLtoJSONstream = require('./lib/xmlToJsonStream');
 const traverse = require('./lib/xmlToJson');
+const cleanXML = require('./lib/cleanXML');
 
 
 module.exports = function(options) {
     const opts = options || {}
-    const attributeMode =  typeof opts.attributeMode === 'undefined' ? true : false;
+    const attributeMode =  typeof opts.attributeMode === 'undefined' ? true : opts.attributeMode;
+
+    
 
 
     const createStream = function() {
@@ -13,10 +16,10 @@ module.exports = function(options) {
 
 
      const xmlToJson = function(xml,cb) {
-        const cleanXML = xml.replace(/>\s*</g, '><');
+        const clean = cleanXML(xml);
         let json;
         try {
-            json = traverse(cleanXML,attributeMode);
+            json = traverse(clean,attributeMode);
             return cb(null,json);
         }catch(e) {
             return cb(e);
@@ -25,8 +28,14 @@ module.exports = function(options) {
     }
 
 
+
+    
+
+
     return {
         createStream : createStream,
         xmlToJson : xmlToJson
     }
 }
+
+

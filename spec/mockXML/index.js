@@ -10,7 +10,14 @@ const TEST3 = `<employee>
     <age>25</age>
 </employee>`
 
+const TEST4 = `<employee id="12345">
+</employee>`
 
+const TEST5 = `
+    <employee name="Alex"></employee>
+<role>Software Dev</role>
+        <locality country="US" region="TX" city="Austin"></locality>
+`
 
 
 
@@ -18,5 +25,7 @@ const TEST3 = `<employee>
 module.exports.MOCK_DATA = {
     TEST1: TEST1,
     TEST2: TEST2,
-    TEST3: TEST3
+    TEST3: TEST3,
+    TEST4: TEST4,
+    TEST5: TEST5
 };
