@@ -17,6 +17,21 @@ const TEST5 = `
     <employee name="Alex"></employee>
 <role>Software Dev</role>
         <locality country="US" region="TX" city="Austin"></locality>
+`;
+
+const TEST6 = `
+<employee id="12345">
+    <name type="first">Alex</name>
+    <name type="last">La Bianca</name>
+</employee>
+<employee id="98765">
+    <name type="first">Ash</name>
+    <name type="last">Thrasher</name>
+</employee>
+<employee id="12332">
+    <name type="first">Jon</name>
+    <name type="last">Andrews</name>
+</employee>
 `
 
 
@@ -27,5 +42,6 @@ module.exports.MOCK_DATA = {
     TEST2: TEST2,
     TEST3: TEST3,
     TEST4: TEST4,
-    TEST5: TEST5
+    TEST5: TEST5,
+    TEST6: TEST6
 };

@@ -65,8 +65,7 @@ describe('TRAVERSE: With Attributes', ()=>{
         
         const result = {
             employee: {
-                id: '12345',
-                data: ''
+                id: '12345'
             }
         }
 
@@ -76,23 +75,56 @@ describe('TRAVERSE: With Attributes', ()=>{
     it('should pass sanity check', ()=>{
 
         const cleanXML = clean(mockData.TEST5)
-        const converted = traverse(cleanXML, true);
+        const converted = traverse(cleanXML, attributeMode);
 
         const result = {
             employee: {
-                name: "Alex",
-                data: ''
+                name: "Alex"
             },
             role: "Software Dev",
             locality: {
                 country: "US",
                 region: "TX",
-                city: "Austin",
-                data: '',
+                city: "Austin"
             }
         }
 
         expect(JSON.stringify(converted)).toBe(JSON.stringify(result));
+    })
+
+    it('should create an array of employees where each contain an array of names', ()=>{
+        const cleanXML = clean(mockData.TEST6);
+        const json = traverse(cleanXML,attributeMode);
+
+        const result = {
+            employee: [
+                {
+                    id: "12345",
+                    name: [
+                        { type: 'first', textNode: 'Alex'},
+                        { type: 'last',  textNode: 'La Bianca'}
+                    ]
+                        
+                    
+                },
+                {
+                    id: "98765",
+                    name: [
+                        { type: 'first', textNode: 'Ash'},
+                        { type: 'last',  textNode: 'Thrasher'}
+                    ]
+                },
+                {
+                    id: "12332",
+                    name: [
+                        { type: 'first', textNode: 'Jon'},
+                        { type: 'last',  textNode: 'Andrews'}
+                    ]
+                }
+            ]
+        };
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result))
     })
 
 
@@ -147,6 +179,39 @@ describe('TRAVERSE: Without Attributes', ()=>{
         const result = {
             employee: ""
         }
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result))
+    });
+
+
+    it('should create an array of employees where each contain an array of names', ()=>{
+        const cleanXML = clean(mockData.TEST6);
+        const json = traverse(cleanXML,attributeMode);
+
+        const result = {
+            employee: [
+                {
+                    name: [
+                        "Alex",
+                        "La Bianca"
+                    ]
+                        
+                    
+                },
+                {
+                    name: [
+                        "Ash",
+                        "Thrasher"
+                    ]
+                },
+                {
+                    name: [
+                        "Jon",
+                        "Andrews"
+                    ]
+                }
+            ]
+        };
 
         expect(JSON.stringify(json)).toBe(JSON.stringify(result))
     })
