@@ -79,7 +79,7 @@ const server = http.createServer((req,res)=>{
 ```
 
 #### Or...
-...If you have an XML file you want to convert on the fly via the command line `$ cat file.xml > node app`
+...If you have an XML file you want to convert on the fly via the command line `$ cat file.xml | node app`
 
 ```javascript
 const xmlToJson = require('xml-to-json');

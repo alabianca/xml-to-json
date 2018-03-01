@@ -65,7 +65,8 @@ describe('TRAVERSE: With Attributes', ()=>{
         
         const result = {
             employee: {
-                id: '12345'
+                id: '12345',
+                data: ''
             }
         }
 
@@ -79,13 +80,15 @@ describe('TRAVERSE: With Attributes', ()=>{
 
         const result = {
             employee: {
-                name: "Alex"
+                name: "Alex",
+                data: ''
             },
             role: "Software Dev",
             locality: {
                 country: "US",
                 region: "TX",
-                city: "Austin"
+                city: "Austin",
+                data: '',
             }
         }
 
@@ -94,6 +97,14 @@ describe('TRAVERSE: With Attributes', ()=>{
 
 
 });
+
+
+
+
+
+
+
+
 
 describe('TRAVERSE: Without Attributes', ()=>{
     const attributeMode = false;
@@ -134,7 +145,7 @@ describe('TRAVERSE: Without Attributes', ()=>{
         const json = traverse(cleanXML,attributeMode);
 
         const result = {
-            employee: {}
+            employee: ""
         }
 
         expect(JSON.stringify(json)).toBe(JSON.stringify(result))
