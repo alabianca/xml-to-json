@@ -1,4 +1,4 @@
-# xml-to-json
+# xml-to-json-stream
 
 Simple module to convert XML to JSON with javascript
 
