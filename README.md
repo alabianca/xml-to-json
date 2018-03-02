@@ -127,6 +127,26 @@ process.stdin.pipe(stream).pipe(jsonFile);
         }
     ```
 
+    * If an element contains a textNode and attributes the textNode will have the key textNode
+    ```
+        <employee id="98765">Alex</employee>
+        
+        will turn into...
+        
+        employee: {
+            id: "98765",
+            textNode: "Alex"
+        }
+
+        and ...
+
+        <employee>Alex</employee>
+        
+        will turn into...
+
+        employee: "Alex"
+    ```
+
 
 
     License: MIT

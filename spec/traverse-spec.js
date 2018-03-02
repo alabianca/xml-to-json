@@ -171,6 +171,20 @@ describe('TRAVERSE: With Attributes', ()=>{
         expect(JSON.stringify(json)).toBe(JSON.stringify(result));
     })
 
+    it('should process a single xml element', ()=>{
+        const cleanXML = clean(mockData.TEST9);
+        const json = traverse(cleanXML,attributeMode);
+
+        const result = {
+            employee: {
+                id: "98765",
+                textNode: "Alex"
+            }
+        }
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result));
+    })
+
 
 });
 
@@ -272,5 +286,16 @@ describe('TRAVERSE: Without Attributes', ()=>{
 
         expect(JSON.stringify(json)).toBe(JSON.stringify(result))
     });
+
+    it('should process a single xml element', ()=>{
+        const cleanXML = clean(mockData.TEST9);
+        const json = traverse(cleanXML,attributeMode);
+
+        const result = {
+            employee: "Alex"
+        }
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result));
+    })
 });
 

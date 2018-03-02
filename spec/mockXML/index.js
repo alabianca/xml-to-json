@@ -49,6 +49,8 @@ const TEST8 =  `
 </xml>
 `
 
+const TEST9 = `<employee id="98765">Alex</employee>`
+
 
 
 module.exports.MOCK_DATA = {
@@ -59,5 +61,6 @@ module.exports.MOCK_DATA = {
     TEST5: TEST5,
     TEST6: TEST6,
     TEST7: TEST7,
-    TEST8: TEST8
+    TEST8: TEST8,
+    TEST9: TEST9
 };
