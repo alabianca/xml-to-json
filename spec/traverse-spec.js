@@ -154,6 +154,23 @@ describe('TRAVERSE: With Attributes', ()=>{
         expect(JSON.stringify(json)).toBe(JSON.stringify(result))
     });
 
+    it('should process an array like element if it is out of order', ()=>{
+        const cleanXML = clean(mockData.TEST8);
+        const json = traverse(cleanXML,attributeMode);
+
+        const result = {
+            xml: {
+                employee: [
+                    {name: 'Alex'},
+                    {name: 'Troy'}
+                ],
+                location: 'US'
+            }
+        };
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result));
+    })
+
 
 });
 

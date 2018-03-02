@@ -41,7 +41,13 @@ const TEST7 = `
     <employee id="789" name="ashley"></employee>
 </xml>
 `
-
+const TEST8 =  `
+<xml>
+    <employee><name>Alex</name></employee>
+    <location>US</location>
+    <employee><name>Troy</name></employee>
+</xml>
+`
 
 
 
@@ -52,5 +58,6 @@ module.exports.MOCK_DATA = {
     TEST4: TEST4,
     TEST5: TEST5,
     TEST6: TEST6,
-    TEST7: TEST7
+    TEST7: TEST7,
+    TEST8: TEST8
 };

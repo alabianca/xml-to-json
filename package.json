@@ -1,14 +1,18 @@
 {
-  "name": "xmlToJsonStream",
+  "name": "xml-to-json",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Simple module to convert XML to JSON with javascript",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alabianca/xml-to-json.git"
+  },
   "scripts": {
     "test": "jasmine"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alexander La Bianca",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "jasmine": "^3.0.0"
