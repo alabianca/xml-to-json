@@ -4,7 +4,7 @@ Simple module to convert XML to JSON with javascript
 
 ## Public API
 
-xml-to-json only has two public methods `xmlToJson` and `createStream` .
+xml-to-json-stream only has two public methods `xmlToJson` and `createStream` .
 Use xmlToJson if you simply want to pass in some XML and access the resulting JSON in the callback function. 
 Use createStream if you need to pipe some readable XML stream into a writable destination and convert the XML to JSON along the way. 
 
@@ -12,7 +12,7 @@ The module currently accepts `attributeMode` as an option, which defaults to `tr
 be ignored or not. 
 
 ```javascript
-const xmlToJson = require('xml-to-json');
+const xmlToJson = require('xml-to-json-stream');
 const parser = xmlToJson({attributeMode:false});
 
 const xml = `
@@ -47,7 +47,7 @@ parser.xmlToJson(xml, (err,json)=>{
 ### xmlToJson
 
 ```javascript
-const xmlToJson = require('xml-to-json');
+const xmlToJson = require('xml-to-json-stream');
 const parser = xmlToJson({attributeMode:false});
 
 parser.xmlToJson(xml, (err,json)=>{
@@ -66,7 +66,7 @@ Consider a hypothetical weather service that only responds with XML data. `creat
 letting you pipe service responses through the parser/stream.
 
 ```javascript
-const xmlToJson = require('xml-to-json');
+const xmlToJson = require('xml-to-json-stream');
 const parser = xmlToJson();
 const stream = parser.createStream();
 
@@ -82,7 +82,7 @@ const server = http.createServer((req,res)=>{
 ...If you have an XML file you want to convert on the fly via the command line `$ cat file.xml | node app`
 
 ```javascript
-const xmlToJson = require('xml-to-json');
+const xmlToJson = require('xml-to-json-stream');
 const fs = require('fs');
 
 const parser = xmlToJson();
