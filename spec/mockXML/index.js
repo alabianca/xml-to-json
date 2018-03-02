@@ -32,6 +32,14 @@ const TEST6 = `
     <name type="first">Jon</name>
     <name type="last">Andrews</name>
 </employee>
+`;
+
+const TEST7 = `
+<xml>
+    <employee id="123" name="alex"></employee>
+    <employee id="456" name="jon"></employee>
+    <employee id="789" name="ashley"></employee>
+</xml>
 `
 
 
@@ -43,5 +51,6 @@ module.exports.MOCK_DATA = {
     TEST3: TEST3,
     TEST4: TEST4,
     TEST5: TEST5,
-    TEST6: TEST6
+    TEST6: TEST6,
+    TEST7: TEST7
 };

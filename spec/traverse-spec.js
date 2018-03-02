@@ -125,7 +125,34 @@ describe('TRAVERSE: With Attributes', ()=>{
         };
 
         expect(JSON.stringify(json)).toBe(JSON.stringify(result))
-    })
+    });
+
+
+    it('should create an object with xml key that contains one property which is an array of length 3', ()=>{
+        const cleanXML = clean(mockData.TEST7);
+        const json = traverse(cleanXML,attributeMode);
+
+        const result = {
+            xml: {
+                employee: [
+                    {
+                        id: '123',
+                        name: 'alex'
+                    },
+                    {
+                        id: '456',
+                        name: 'jon'
+                    },
+                    {
+                        id: '789',
+                        name: 'ashley'
+                    }
+                ]
+            }
+        }
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result))
+    });
 
 
 });
@@ -215,5 +242,18 @@ describe('TRAVERSE: Without Attributes', ()=>{
 
         expect(JSON.stringify(json)).toBe(JSON.stringify(result))
     })
+
+    it('should create an object with xml key that contains one property which is an array of length 3', ()=>{
+        const cleanXML = clean(mockData.TEST7);
+        const json = traverse(cleanXML,attributeMode);
+
+        const result = {
+            xml: {
+                employee: ""
+            }
+        }
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result))
+    });
 });
 
