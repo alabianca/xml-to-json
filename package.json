@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jasmine"
   },
-  "keywords": [],
+  "keywords": ["stream", "xml to json", "xml", "json", "transform stream", "convert"],
   "author": "Alexander La Bianca",
   "license": "MIT",
   "dependencies": {},

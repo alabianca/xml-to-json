@@ -2,6 +2,9 @@
 
 Simple module to convert XML to JSON with javascript
 
+## Download
+npm install xml-to-json-stream
+
 ## Public API
 
 xml-to-json-stream only has two public methods `xmlToJson` and `createStream` .
