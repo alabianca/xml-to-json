@@ -1,6 +1,6 @@
 {
   "name": "xml-to-json-stream",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple module to convert XML to JSON with javascript",
   "main": "index.js",
   "repository": {
@@ -10,7 +10,14 @@
   "scripts": {
     "test": "jasmine"
   },
-  "keywords": ["stream", "xml to json", "xml", "json", "transform stream", "convert"],
+  "keywords": [
+    "stream",
+    "xml to json",
+    "xml",
+    "json",
+    "transform stream",
+    "convert"
+  ],
   "author": "Alexander La Bianca",
   "license": "MIT",
   "dependencies": {},
