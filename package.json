@@ -10,6 +10,9 @@
   "scripts": {
     "test": "jasmine"
   },
+  "bin": {
+    "xmlToJson": "./bin/global.js"
+  },
   "keywords": [
     "stream",
     "xml to json",
