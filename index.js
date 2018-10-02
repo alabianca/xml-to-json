@@ -21,7 +21,7 @@ module.exports = function(options) {
 
         if(!validator(clean)) {
             const err = new Error('Invalid XML. XML is missing closing or opening tag');
-            return cb(e);
+            return cb(err);
         }
 
         let json;

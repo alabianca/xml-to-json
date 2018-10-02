@@ -51,6 +51,15 @@ const TEST8 =  `
 
 const TEST9 = `<employee id="98765">Alex</employee>`
 
+//Invalid XML
+const TEST10 = `<employee id="98765">Alex</employee`
+const TEST11 = `<employee id="98765">Alex<employee>`
+const TEST12 = `<employee id="98765"><employee id="12345">Jon<employee></employee>`
+
+//nested repetition
+const TEST13 = `<employee id="98765" name="alex"><employee id="123" name="jon"></employee></employee>`;
+const TEST14 = `<employee id="98765" name="alex"><employee>Alex</employee></employee>`
+
 
 
 module.exports.MOCK_DATA = {
@@ -62,5 +71,10 @@ module.exports.MOCK_DATA = {
     TEST6: TEST6,
     TEST7: TEST7,
     TEST8: TEST8,
-    TEST9: TEST9
+    TEST9: TEST9,
+    I_TEST10: TEST10,
+    I_TEST11: TEST11,
+    I_TEST12: TEST12,
+    TEST13: TEST13,
+    TEST14: TEST14
 };

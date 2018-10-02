@@ -191,11 +191,6 @@ describe('TRAVERSE: With Attributes', ()=>{
 
 
 
-
-
-
-
-
 describe('TRAVERSE: Without Attributes', ()=>{
     const attributeMode = false;
 
@@ -296,6 +291,76 @@ describe('TRAVERSE: Without Attributes', ()=>{
         }
 
         expect(JSON.stringify(json)).toBe(JSON.stringify(result));
-    })
+    });
 });
+
+
+describe('ERRORS: Invalid XML', ()=>{
+    const attributeMode = true;
+
+    it('should throw an error with invalid xml 1', ()=>{
+        const cleanXML = clean(mockData.I_TEST10);
+        
+        expect(traverse.bind(null,cleanXML,attributeMode)).toThrowError(Error, "Invalid XML")
+        
+    });
+
+    it('should throw an error with invalid xml 2', ()=>{
+        const cleanXML = clean(mockData.I_TEST11);
+        
+        expect(traverse.bind(null,cleanXML,attributeMode)).toThrowError(Error, "Invalid XML")
+        
+    });
+
+    it('should throw an error with invalid xml 3', ()=>{
+        const cleanXML = clean(mockData.I_TEST12);
+        
+        expect(traverse.bind(null,cleanXML,attributeMode)).toThrowError(Error, "Invalid XML")
+        
+    });
+});
+
+
+
+describe('NESTING: Repetions', ()=>{
+    const attributeMode = true;
+
+    it('should correctly parse nested repeated xml tags', ()=>{
+        const cleanXML = clean(mockData.TEST13);
+        const json     = traverse(cleanXML,attributeMode);
+
+        const result = {
+            employee: {
+                id: "98765",
+                name: "alex",
+                employee: {
+                    id: "123",
+                    name: "jon"
+                }
+            }
+        }
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result));
+        
+        
+    });
+
+    it('should throw an error with invalid xml 2', ()=>{
+        const cleanXML = clean(mockData.TEST14);
+        const json     = traverse(cleanXML,attributeMode);
+
+        const result = {
+            employee: {
+                id: "98765",
+                name: "alex",
+                employee: "Alex"
+            }
+        }
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result));
+        
+    });
+
+});
+
 
