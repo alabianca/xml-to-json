@@ -361,6 +361,81 @@ describe('NESTING: Repetions', ()=>{
         
     });
 
+    it('should distinguish between similar tags (<bbb> vs. <bbb1>)', ()=>{
+        const cleanXML = clean(mockData.TEST15);
+        const json     = traverse(cleanXML,attributeMode);
+
+        const result = {
+            aaa: {
+                bbb: [
+                    {
+                        bbb1: "ccc",
+                        yyy: "yyy"
+                    },
+                    {
+                        ddd: "ddd",
+                        yyy: "yyy"
+                    }
+                ]
+            }
+        }
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result));
+    });
+
+    it('should distinguis between similar tags [2] (<bbb> vs <bbb1>)', ()=>{
+        const cleanXML = clean(mockData.TEST16);
+        const json     = traverse(cleanXML,attributeMode);
+
+        const result = {
+            aaa: {
+                bbb: [
+                    {
+                        ccc: "ccc",
+                        bbb1: "bbb1"
+                    },
+                    {
+                        ddd: "ddd",
+                        bbb2: "bbb2"
+                    }
+                ]
+            }
+        }
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result));
+    })
+
+
+    it('should distinguis between similar tags [3] [attribute=true] (<bbb> vs <bbb1>)', ()=>{
+        const cleanXML = clean(mockData.TEST17);
+        const json     = traverse(cleanXML,attributeMode);
+
+        const result = {
+            aaa: {
+                bbb: [
+                    {
+                        locale: "Austin",
+                        ccc: "ccc",
+                        bbb1: {
+                            locale: "Berlin",
+                            textNode: "bbb1"
+                        },
+                    },
+                    {
+                        locale: "San Francisco",
+                        ddd: "ddd",
+                        bbb2: {
+                            locale: "London",
+                            textNode: "bbb2"
+                        },
+                    }
+                ]
+            }
+        }
+
+        expect(JSON.stringify(json)).toBe(JSON.stringify(result));
+    })
+
 });
 
 

@@ -60,6 +60,38 @@ const TEST12 = `<employee id="98765"><employee id="12345">Jon<employee></employe
 const TEST13 = `<employee id="98765" name="alex"><employee id="123" name="jon"></employee></employee>`;
 const TEST14 = `<employee id="98765" name="alex"><employee>Alex</employee></employee>`
 
+const TEST15 = `<aaa>
+<bbb>
+    <bbb1>ccc</bbb1>
+    <yyy>yyy</yyy>
+</bbb>
+<bbb>
+    <ddd>ddd</ddd>
+    <yyy>yyy</yyy>
+</bbb>
+</aaa>`;
+
+const TEST16 = `<aaa>
+<bbb>
+    <ccc>ccc</ccc>
+    <bbb1>bbb1</bbb1>
+</bbb>
+<bbb>
+    <ddd>ddd</ddd>
+    <bbb2>bbb2</bbb2>
+</bbb>
+</aaa>`
+
+const TEST17 = `<aaa>
+<bbb locale="Austin">
+    <ccc>ccc</ccc>
+    <bbb1 locale="Berlin">bbb1</bbb1>
+</bbb>
+<bbb locale="San Francisco">
+    <ddd>ddd</ddd>
+    <bbb2 locale="London">bbb2</bbb2>
+</bbb>
+</aaa>`
 
 
 module.exports.MOCK_DATA = {
@@ -76,5 +108,8 @@ module.exports.MOCK_DATA = {
     I_TEST11: TEST11,
     I_TEST12: TEST12,
     TEST13: TEST13,
-    TEST14: TEST14
+    TEST14: TEST14,
+    TEST15: TEST15,
+    TEST16: TEST16,
+    TEST17: TEST17
 };
