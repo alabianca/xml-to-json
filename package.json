@@ -10,6 +10,9 @@
   "scripts": {
     "test": "jasmine"
   },
+  "bin": {
+    "tojson": "./bin/tojson.js"
+  },
   "keywords": [
     "stream",
     "xml to json",
