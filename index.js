@@ -8,9 +8,8 @@ module.exports = function(options) {
     const opts = options || {}
     const attributeMode =  typeof opts.attributeMode === 'undefined' ? true : opts.attributeMode;
 
+
     
-
-
     const createStream = function() {
         return new XMLtoJSONstream({attributeMode: attributeMode});
     } 
