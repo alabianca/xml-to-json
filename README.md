@@ -3,7 +3,9 @@
 Simple module to convert XML to JSON with javascript
 
 ## Download
-npm install xml-to-json-stream
+`npm install xml-to-json-stream` or `npm install xml-to-json-stream -g`
+Installing the package globally allows you to convert xml file to json files via the command line.
+`cat config.xml | tojson > config.json` . If you want to ignore xml attribute simply add the `-no-attr` flag.
 
 ## Public API
 
