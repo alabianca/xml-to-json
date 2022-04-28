@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alabianca/xml-to-json.git"
+    "url": "https://github.com/jerenmb/xml-2-json.git"
   },
   "scripts": {
     "test": "jasmine"
@@ -15,13 +15,13 @@
   },
   "keywords": [
     "stream",
-    "xml to json",
+    "xml 2 json",
     "xml",
     "json",
     "transform stream",
     "convert"
   ],
-  "author": "Alexander La Bianca",
+  "author": "Jeren Browning",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
